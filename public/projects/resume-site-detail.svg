@@ -1,0 +1,9 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0B1020"/>
+  <rect x="60" y="60" width="1480" height="780" rx="30" fill="#141A31" stroke="#7F8CFF" stroke-opacity="0.24"/>
+  <rect x="112" y="124" width="1376" height="222" rx="24" fill="#20274A"/>
+  <rect x="112" y="382" width="428" height="330" rx="24" fill="#10182C"/>
+  <rect x="572" y="382" width="428" height="330" rx="24" fill="#10182C"/>
+  <rect x="1032" y="382" width="456" height="330" rx="24" fill="#10182C"/>
+  <text x="112" y="104" fill="#80F5FF" font-family="monospace" font-size="22" letter-spacing="7">DETAIL / PROCESS PLACEHOLDER</text>
+</svg>

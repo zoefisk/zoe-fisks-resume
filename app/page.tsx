@@ -1,65 +1,170 @@
 import Image from "next/image";
+import { ContactSection } from "@/app/components/ContactSection";
+import { PageSidebar } from "@/app/components/PageSidebar";
+import { ProjectGallery } from "@/app/components/ProjectGallery";
+import { StackBrowser } from "@/app/components/StackBrowser";
+import {
+  contactLinks,
+  educationHistory,
+  featuredStack,
+  profile,
+  projects,
+  skills,
+  workHistory,
+} from "@/app/resume-data";
 
 export default function Home() {
+  const timelineFloor = 2015;
+  const timelineCeiling = 2026;
+  const sections = [
+    { id: "start", label: "Start" },
+    { id: "background", label: "Background" },
+    { id: "tech-stack", label: "Tech stack" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="resume-page">
+      <PageSidebar sections={sections} />
+      <div className="resume-shell">
+        <section className="hero-panel" id="start">
+          <div className="hero-copy">
+            <p className="eyebrow">Currently seeking new opportunities</p>
+            <h1 className="hero-name">{profile.name}</h1>
+            <p className="hero-title">{profile.title}</p>
+            <p className="hero-intro">{profile.intro}</p>
+
+            <div className="hero-actions">
+              <a className="primary-link" href="#contact">
+                Contact me
+              </a>
+              <a className="secondary-link" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/zoe-fisk-resume.pdf`} download>
+                Download resume
+              </a>
+              <a
+                className="secondary-link"
+                href={contactLinks[1].href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                className="secondary-link"
+                href={contactLinks[2].href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-photo-wrap">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              alt="Zoë Fisk"
+              className="hero-photo"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/headshot.jpg`}
+              width={320}
+              height={320}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+        </section>
+
+        <section className="section-panel section-panel-wide" id="background">
+          <div className="background-stage">
+            <div className="section-heading section-heading-wide section-heading-copy">
+              <p className="eyebrow">Background</p>
+              <h2>My background</h2>
+              <p className="section-heading-body">
+                Worcester Polytechnic Institute is the center of my academic story, backed by
+                hands-on project work and real team experience.
+              </p>
+            </div>
+
+            <div className="background-grid">
+              {educationHistory.map((entry) => (
+                <article className="background-education-card" key={entry.institution}>
+                  <p className="background-kicker">Education spotlight</p>
+                  <h3>{entry.institution}</h3>
+                  <p className="background-degree">{entry.degree}</p>
+                  <p className="background-timeframe">{entry.timeframe}</p>
+                  <p className="background-copy">{entry.note}</p>
+
+                  <div className="background-coursework-block">
+                    <p className="background-subtitle">Relevant coursework</p>
+                    <div className="background-coursework-list">
+                      {entry.coursework.map((course) => (
+                        <span className="background-course-chip" key={course}>
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+
+              <div className="background-work-rail">
+                <p className="background-kicker">Work history</p>
+                <div className="background-work-list">
+                  {workHistory.map((entry) => (
+                    <article className="background-work-card" key={`${entry.employer}-${entry.role}`}>
+                      <div className="background-work-topline">
+                        <h3>
+                          {entry.employer}
+                          {entry.location ? <span> ({entry.location})</span> : null}
+                        </h3>
+                        <p className="background-timeframe">{entry.timeframe}</p>
+                      </div>
+
+                      <p className="background-work-role">{entry.role}</p>
+
+                      <ul className="background-work-highlights">
+                        {entry.highlights.map((highlight) => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-panel section-panel-wide" id="tech-stack">
+          <div className="stack-stage">
+            <div className="section-heading section-heading-wide section-heading-copy">
+              <p className="eyebrow">Tech stack</p>
+              <h2>My technical skills</h2>
+              <p className="section-heading-body">
+                These are the skills and tools I&#39;ve picked up along the way, both in coursework and projects.
+              </p>
+            </div>
+
+            <StackBrowser
+              items={featuredStack}
+              timelineCeiling={timelineCeiling}
+              timelineFloor={timelineFloor}
+            />
+          </div>
+        </section>
+
+        <section className="section-panel section-panel-projects section-panel-wide" id="projects">
+          <div className="section-heading section-heading-wide section-heading-copy">
+            <p className="eyebrow">Projects I&#39;ve worked on</p>
+            <h2>Projects</h2>
+            <p className="section-heading-body">
+              Select any project to see more details about it.
+            </p>
+          </div>
+
+          <ProjectGallery projects={projects} />
+        </section>
+
+        <ContactSection contactLinks={contactLinks} skills={skills} />
+      </div>
+    </main>
   );
 }

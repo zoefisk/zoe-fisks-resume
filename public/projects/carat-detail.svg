@@ -1,0 +1,8 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F1522"/>
+  <rect x="66" y="66" width="1468" height="768" rx="32" fill="#182132" stroke="#80F5FF" stroke-opacity="0.18"/>
+  <rect x="116" y="130" width="424" height="540" rx="22" fill="#23142B"/>
+  <rect x="572" y="130" width="846" height="240" rx="22" fill="#111826"/>
+  <rect x="572" y="396" width="846" height="274" rx="22" fill="#111826"/>
+  <text x="116" y="108" fill="#80F5FF" font-family="monospace" font-size="22" letter-spacing="7">DETAIL PLACEHOLDER</text>
+</svg>

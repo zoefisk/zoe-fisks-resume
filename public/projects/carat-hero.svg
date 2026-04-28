@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#130B19"/>
+  <rect x="44" y="44" width="1512" height="812" rx="28" fill="#24122B" stroke="#FF4FD8" stroke-opacity="0.28"/>
+  <rect x="92" y="110" width="548" height="70" rx="12" fill="#31203A"/>
+  <rect x="92" y="218" width="742" height="22" rx="11" fill="#8B6D97"/>
+  <rect x="92" y="260" width="682" height="22" rx="11" fill="#715D7D"/>
+  <rect x="92" y="334" width="650" height="352" rx="20" fill="#1A202D" stroke="#80F5FF" stroke-opacity="0.26"/>
+  <rect x="782" y="334" width="520" height="156" rx="20" fill="#25192C"/>
+  <rect x="782" y="520" width="520" height="166" rx="20" fill="#25192C"/>
+  <text x="92" y="94" fill="#80F5FF" font-family="monospace" font-size="24" letter-spacing="7">PLACEHOLDER CASE STUDY</text>
+  <text x="92" y="164" fill="#EFF7FF" font-family="monospace" font-size="54">CARAT HERO IMAGE</text>
+</svg>

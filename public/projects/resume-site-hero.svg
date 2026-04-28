@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#101322"/>
+  <rect x="50" y="50" width="1500" height="800" rx="28" fill="#171E36" stroke="#7F8CFF" stroke-opacity="0.28"/>
+  <rect x="90" y="104" width="500" height="74" rx="12" fill="#232A4B"/>
+  <rect x="90" y="216" width="724" height="22" rx="11" fill="#6772B8"/>
+  <rect x="90" y="258" width="654" height="22" rx="11" fill="#4E578C"/>
+  <rect x="90" y="342" width="640" height="410" rx="20" fill="#0E1425"/>
+  <rect x="770" y="342" width="700" height="194" rx="20" fill="#151C30"/>
+  <rect x="770" y="558" width="700" height="194" rx="20" fill="#151C30"/>
+  <text x="90" y="88" fill="#80F5FF" font-family="monospace" font-size="24" letter-spacing="7">PLACEHOLDER CASE STUDY</text>
+  <text x="90" y="160" fill="#EFF7FF" font-family="monospace" font-size="54">RESUME SITE HERO</text>
+</svg>

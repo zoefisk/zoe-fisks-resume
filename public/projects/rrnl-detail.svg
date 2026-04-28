@@ -1,0 +1,9 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0A1018"/>
+  <rect x="70" y="70" width="1460" height="760" rx="28" fill="#10212A" stroke="#5DFDCF" stroke-opacity="0.22"/>
+  <rect x="118" y="126" width="586" height="614" rx="24" fill="#0C2F33"/>
+  <rect x="744" y="126" width="650" height="182" rx="24" fill="#162330"/>
+  <rect x="744" y="334" width="650" height="182" rx="24" fill="#162330"/>
+  <rect x="744" y="542" width="650" height="198" rx="24" fill="#162330"/>
+  <text x="118" y="108" fill="#80F5FF" font-family="monospace" font-size="22" letter-spacing="7">SCREEN / GALLERY PLACEHOLDER</text>
+</svg>
