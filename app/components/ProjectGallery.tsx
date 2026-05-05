@@ -133,25 +133,9 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
         </article>
       ) : (
         <article className="project-detail project-detail-empty" key="project-detail-empty">
-          <div className="project-detail-topline">
-            <p className="eyebrow">Selected project</p>
-            <p>Choose from the list</p>
-          </div>
-
-          <h3>Select a project.</h3>
-          <p className="project-summary">
-            Pick a card from the left to load its story, stack, links, and any deeper detail page
-            that comes with it.
+          <p className="project-detail-empty-message">
+            Click a project to see its details expanded here!
           </p>
-
-          <div className="project-detail-section">
-            <p className="project-detail-label">What appears here</p>
-            <ul>
-              <li>Project summary and highlights</li>
-              <li>Tools, modes, and external links</li>
-              <li>Expanded details when a project subpage exists</li>
-            </ul>
-          </div>
         </article>
       )}
     </div>
