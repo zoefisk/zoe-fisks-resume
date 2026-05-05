@@ -118,11 +118,14 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
 
             {activeProject.subpage && activeProject.slug ? (
               <div className="project-detail-actions">
+                <div className="project-detail-section project-detail-section-subpage">
+                  <p className="project-detail-label">On this site</p>
+                </div>
                 <Link className="project-subpage-link" href={`/projects/${activeProject.slug}`}>
                   <span className="project-action-icon" aria-hidden="true">
-                    +
+                    []
                   </span>
-                  <span>See more in subpage</span>
+                  <span>Open full project walkthrough here</span>
                 </Link>
               </div>
             ) : null}
