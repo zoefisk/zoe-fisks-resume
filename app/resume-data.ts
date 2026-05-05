@@ -524,7 +524,7 @@ export const projects: Project[] = [
     // slug: "iqp",
     index: "03",
     title: "Interactive Qualifying Project",
-    tag: "Research / public-facing project",
+    tag: "Research / interdisciplinary",
     dateLabel: "August 2024 - December 2024",
     tone: "ink",
     summary:
