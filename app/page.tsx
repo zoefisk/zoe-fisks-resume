@@ -77,10 +77,6 @@ export default function Home() {
             <div className="section-heading section-heading-wide section-heading-copy">
               <p className="eyebrow">Background</p>
               <h2>My background</h2>
-              <p className="section-heading-body">
-                Worcester Polytechnic Institute is the center of my academic story, backed by
-                hands-on project work and real team experience.
-              </p>
             </div>
 
             <div className="background-grid">
