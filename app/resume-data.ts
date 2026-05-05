@@ -90,7 +90,7 @@ export const educationHistory: EducationEntry[] = [
     degree: "B.S. in Computer Science",
     institution: "Worcester Polytechnic Institute",
     note:
-      "WPI is the core of my technical background, especially the way it combines hands-on software engineering, project work, and systems thinking.",
+      "",
     timeframe: "Expected 2026",
     coursework: [
       "Intro to CS",
