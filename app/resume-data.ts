@@ -113,7 +113,7 @@ export const educationHistory: EducationEntry[] = [
 
 export const workHistory: WorkEntry[] = [
   {
-    employer: "MOSAIQ Software",
+    employer: "Mosaiq Software",
     highlights: [
       "Collaborated on a 15-20 person engineering team.",
       "Worked in React on frontend implementation.",
@@ -617,14 +617,42 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "todolist",
+    id: "turing-machine-simulator",
     index: "05",
+    title: "Turing Machine Simulator",
+    tag: "Foundations of CS Coursework",
+    dateLabel: "May 2026",
+    tone: "teal",
+    summary:
+        "I built an interactive web application that simulates a Turing machine adding two binary numbers step by step, with both tape and state-diagram visualizations designed for learning.",
+    highlights: [
+      "Shows the machine’s progress one action at a time, including tape-head movement, temporary markers, and result construction",
+      "Supports both binary and decimal input modes, converting decimal values into binary before simulation",
+      "Includes guided walkthroughs, skip/rewind controls, and a diagram mode to help users understand the algorithm visually",
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "xyFlow",
+      "Vercel",
+    ],
+    links: [
+      {
+        label: "Visit site",
+        href: "https://turingmachinesimulator.zoefisk.com/",
+      },
+    ],
+  },
+  {
+    id: "todolist",
+    index: "06",
     title: "To-do List App",
     tag: "Webware Coursework",
     dateLabel: "February 2025",
-    tone: "teal",
+    tone: "ink",
     summary:
-      "This was a simple to-do list application I built as part of the Webware course with Professor Wilson Wong at WPI. Users can create, edit, and delete tasks, as well as mark them completed. They can also set due dates.",
+        "This was a simple to-do list application I built as part of the Webware course with Professor Wilson Wong at WPI. Users can create, edit, and delete tasks, as well as mark them completed. They can also set due dates.",
     highlights: [
       "Users can search for and select any image from Unsplash to use as a background, making the app more personalized and enjoyable to use",
       "Users can log in or sign up using GitHub or Google",
@@ -642,29 +670,6 @@ export const projects: Project[] = [
       // },
     ],
   },
-  // {
-  //   id: "turing-machine-simulator",
-  //   index: "06",
-  //   title: "Turing Machine Simulator",
-  //   tag: "Foundations of CS Coursework",
-  //   dateLabel: "May 2026",
-  //   tone: "ink",
-  //   summary:
-  //       "I made this application to simulate a turing machine as it goes through and adds two binary numbers. " +
-  //       "This was a simple to-do list application I built as part of the Webware course with Professor Wilson Wong at WPI. Users can create, edit, and delete tasks, as well as mark them completed. They can also set due dates.",
-  //   highlights: [
-  //     "Users can search for and select any image from Unsplash to use as a background, making the app more personalized and enjoyable to use",
-  //     "Users can log in or sign up using GitHub or Google",
-  //     "Useful as a lightweight live-demo entry alongside longer-form project writeups",
-  //   ],
-  //   stack: ["Vercel deployment", "MongoDB storage", "Course project", "REACT", "User Authentication", "Mantine UI", "Unsplash API"],
-  //   links: [
-  //     {
-  //       label: "Visit site",
-  //       href: "https://turingmachinesimulator.zoefisk.com/",
-  //     },
-  //   ],
-  // },
 ];
 
 export function getProjectBySlug(slug: string) {
