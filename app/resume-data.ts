@@ -522,7 +522,7 @@ export const projects: Project[] = [
   {
     id: "iqp",
     // slug: "iqp",
-    index: "01",
+    index: "03",
     title: "Interactive Qualifying Project",
     tag: "Research / public-facing project",
     dateLabel: "August 2024 - December 2024",
@@ -545,11 +545,11 @@ export const projects: Project[] = [
   {
     id: "resume-site",
     // slug: "resume-site",
-    index: "03",
+    index: "04",
     title: "This Resume Site",
     tag: "Personal / portfolio hybrid",
     dateLabel: "April 2026",
-    tone: "ink",
+    tone: "ember",
     // snapshot:
     //   "This website is a showcase of my resume and portfolio, but also a project in itself. ",
     summary:
@@ -618,7 +618,7 @@ export const projects: Project[] = [
   },
   {
     id: "todolist",
-    index: "04",
+    index: "05",
     title: "To-do List App",
     tag: "Webware Coursework",
     dateLabel: "February 2025",
@@ -642,29 +642,29 @@ export const projects: Project[] = [
       // },
     ],
   },
-  {
-    id: "turing-machine-simulator",
-    index: "05",
-    title: "Turing Machine Simulator",
-    tag: "Foundations of CS Coursework",
-    dateLabel: "May 2026",
-    tone: "teal",
-    summary:
-        "I made this application to simulate a turing machine as it goes through and adds two binary numbers. " +
-        "This was a simple to-do list application I built as part of the Webware course with Professor Wilson Wong at WPI. Users can create, edit, and delete tasks, as well as mark them completed. They can also set due dates.",
-    highlights: [
-      "Users can search for and select any image from Unsplash to use as a background, making the app more personalized and enjoyable to use",
-      "Users can log in or sign up using GitHub or Google",
-      "Useful as a lightweight live-demo entry alongside longer-form project writeups",
-    ],
-    stack: ["Vercel deployment", "MongoDB storage", "Course project", "REACT", "User Authentication", "Mantine UI", "Unsplash API"],
-    links: [
-      {
-        label: "Visit site",
-        href: "https://turingmachinesimulator.zoefisk.com/",
-      },
-    ],
-  },
+  // {
+  //   id: "turing-machine-simulator",
+  //   index: "06",
+  //   title: "Turing Machine Simulator",
+  //   tag: "Foundations of CS Coursework",
+  //   dateLabel: "May 2026",
+  //   tone: "ink",
+  //   summary:
+  //       "I made this application to simulate a turing machine as it goes through and adds two binary numbers. " +
+  //       "This was a simple to-do list application I built as part of the Webware course with Professor Wilson Wong at WPI. Users can create, edit, and delete tasks, as well as mark them completed. They can also set due dates.",
+  //   highlights: [
+  //     "Users can search for and select any image from Unsplash to use as a background, making the app more personalized and enjoyable to use",
+  //     "Users can log in or sign up using GitHub or Google",
+  //     "Useful as a lightweight live-demo entry alongside longer-form project writeups",
+  //   ],
+  //   stack: ["Vercel deployment", "MongoDB storage", "Course project", "REACT", "User Authentication", "Mantine UI", "Unsplash API"],
+  //   links: [
+  //     {
+  //       label: "Visit site",
+  //       href: "https://turingmachinesimulator.zoefisk.com/",
+  //     },
+  //   ],
+  // },
 ];
 
 export function getProjectBySlug(slug: string) {
