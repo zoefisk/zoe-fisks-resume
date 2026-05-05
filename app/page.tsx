@@ -39,9 +39,9 @@ export default function Home() {
               <a className="primary-link" href="#contact">
                 Contact me
               </a>
-              <a className="secondary-link" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/zoe-fisk-resume.pdf`} download>
-                Download resume
-              </a>
+              {/*<a className="secondary-link" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/zoe-fisk-resume.pdf`} download>*/}
+              {/*  Download resume*/}
+              {/*</a>*/}
               <a
                 className="secondary-link"
                 href={contactLinks[1].href}
