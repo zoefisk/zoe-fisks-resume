@@ -15,6 +15,8 @@ export function PageSidebar({ sections }: PageSidebarProps) {
   const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pendingSectionRef = useRef<string | null>(null);
+  const scrollAnchorOffset = 24;
+  const scrollAnchorTolerance = 14;
   const activeSectionLabel =
     sections.find((section) => section.id === activeSection)?.label ?? sections[0]?.label ?? "Start";
 
@@ -47,8 +49,15 @@ export function PageSidebar({ sections }: PageSidebarProps) {
 
       if (pendingSection) {
         const targetSection = sectionRects.find((section) => section.id === pendingSection);
+        const isLastSection = sectionRects[sectionRects.length - 1]?.id === pendingSection;
 
-        if (targetSection && targetSection.top <= markerY) {
+        if (
+          targetSection &&
+          (
+            Math.abs(targetSection.top - scrollAnchorOffset) <= scrollAnchorTolerance ||
+            (isLastSection && isNearPageBottom)
+          )
+        ) {
           setActiveSection(pendingSection);
           pendingSectionRef.current = null;
           return;
