@@ -82,7 +82,7 @@ export const profile = {
   name: "Zoë Fisk",
   title: "FULLSTACK DEVELOPMENT",
   intro:
-    "Hey! I’m Zoë. I’ve been programming for most of my life and have experience in full-stack development. I’m seeking software engineering opportunities and am comfortable working in front-end, back-end, or across both.",
+    "Hey! I’m Zoë. I’ve been programming for most of my life, it's a true passion of mine! I’m seeking software engineering opportunities and am comfortable working in front-end, back-end, or across both.",
 };
 
 export const educationHistory: EducationEntry[] = [
@@ -90,7 +90,7 @@ export const educationHistory: EducationEntry[] = [
     degree: "B.S. in Computer Science",
     institution: "Worcester Polytechnic Institute",
     note:
-      "WPI is the core of my technical background, especially the way it combines hands-on software engineering, project work, and systems thinking.",
+      "WPI is the core of my technical background, especially the emphasis on team collaboration and project work.",
     timeframe: "Expected 2026",
     coursework: [
       "Intro to CS",
@@ -101,7 +101,7 @@ export const educationHistory: EducationEntry[] = [
       "Algorithms",
       "Social Implications",
       "Database Systems I + II",
-      "Disrete Math",
+      "Discrete Math",
       "Software Engineering",
       "Webware",
       "AI For Game Dev",
@@ -116,7 +116,7 @@ export const workHistory: WorkEntry[] = [
     employer: "Mosaiq Software",
     highlights: [
       "Collaborated on a 15-20 person engineering team.",
-      "Worked in React on frontend implementation.",
+      "Used React on frontend implementation.",
       "Applied Agile development practices in team workflows.",
     ],
     role: "Software Engineer (Volunteer)",
@@ -258,7 +258,7 @@ export const featuredStack: TechStackItem[] = [
   { accent: "sun", category: "Concept", endYear: 2026, label: "Agile development", phase: "Process", startYear: 2024 },
   { accent: "sun", category: "Concept", endYear: 2026, label: "Scrum", phase: "Process", startYear: 2024 },
   { accent: "sun", category: "Concept", endYear: 2026, label: "UI / UX design", phase: "Design thinking", startYear: 2024 },
-  { accent: "sun", category: "Concept", endYear: 2026, label: "User study implementation", phase: "Research", startYear: 2024 },
+  // { accent: "sun", category: "Concept", endYear: 2026, label: "User study implementation", phase: "Research", startYear: 2024 },
 ];
 
 export const contactLinks = [
@@ -323,7 +323,7 @@ export const projects: Project[] = [
       "Scouting forms generate QR codes and CSV exports for easy data collection and sharing, but can also go straight to the cloud",
       "Match and team analysis based on the scouting data and live API data from The Blue Alliance",
     ],
-    stack: ["Prototype", "Visual system", "Interaction design", "Concept development"],
+    stack: ["Next.js", "Firebase", "IndexedDB", "Service workers", "TBA API", "QR workflows"],
     subpage: {
       intro:
           "I have been actively developing a scouting application for teams competing in the FIRST Robotics Competition (FRC). As an alumnus of Team Operation PEACCE #3461, I saw firsthand both the value of scouting and the limitations of the systems we used, such as paper workflows and Google Forms. In response, I set out to design a tool that streamlines the process while expanding its capabilities, giving teams a more reliable and effective way to collect and analyze competition data.",
@@ -534,7 +534,7 @@ export const projects: Project[] = [
       "Conducted 20+ stakeholder interviews across the island",
       "Collaborated closely within a team of four students",
     ],
-    stack: ["Content architecture", "Responsive UI", "Research framing", "Frontend build"],
+    stack: ["Stakeholder interviews", "Sustainability research", "Qualitative research", "Food-system analysis"],
     links: [
       {
         label: "Open project page",
@@ -550,71 +550,13 @@ export const projects: Project[] = [
     tag: "Personal / portfolio hybrid",
     dateLabel: "April 2026",
     tone: "ember",
-    // snapshot:
-    //   "This website is a showcase of my resume and portfolio, but also a project in itself. ",
     summary:
       "This website is a showcase of my resume and portfolio, but also a project in itself. I wanted to make something stylish but also simple for the viewer. I also wanted it to be easy to update and expand over time as I add projects and gain experience. Also, although I personally prefer the look of the dark mode, I also added a light mode to make it more accessible and welcoming to different preferences.",
     highlights: [
       "First time building a site without using a component library",
       "A single-page layout that blends contact info and project detail",
-      "All copy grouped in one data file for fast future edits",
     ],
-    stack: ["Next.js App Router", "React", "Tailwind + CSS", "Content structure"],
-    subpage: {
-      intro:
-        "This slug page can document how the resume site itself evolved: what changed as the layout got more interactive, how the styling shifted, and which parts were designed to stay easy to update.",
-      summary:
-        "It is useful to keep a page like this because it shows how you think about turning static information into a navigable experience. It also gives you a home for writing about design revisions, code structure, and future additions.",
-      sections: [
-        {
-          title: "Why make a resume site",
-          blocks: [
-            {
-              body: [
-                "Use this section to explain what a website lets you show that a PDF cannot, especially around interaction, hierarchy, and richer project storytelling.",
-                "You can also write about the tension between simplicity and personality here.",
-              ],
-              image: {
-                alt: "Placeholder subpage image for the resume site hero view",
-                caption: "Hero placeholder for the resume site subpage.",
-                src: "/projects/resume-site-hero.svg",
-              },
-              imageSide: "right",
-              imageSize: "wide",
-            },
-          ],
-        },
-        {
-          title: "Design system choices",
-          blocks: [
-            {
-              body: [
-                "This is a good place to describe the futuristic palette, typography, and the browse-detail split used for the projects area.",
-                "Because the site is yours, you can also be more reflective about what worked and what you would still change.",
-              ],
-              image: {
-                alt: "Placeholder subpage image for the resume site detail view",
-                caption: "Secondary placeholder for a component, section, or layout detail.",
-                src: "/projects/resume-site-detail.svg",
-              },
-              imageSide: "left",
-              imageSize: "standard",
-            },
-          ],
-        },
-        {
-          title: "Where it goes next",
-          blocks: [
-            {
-              body: [
-                "This page can grow into a changelog of the site itself: real project imagery, better case studies, and more intentional copy.",
-                "If you want a writing space attached to the portfolio, this page can explain that direction too.",
-              ],
-            },
-          ],
-        },
-      ],
-    },
+    stack: ["Next.js App Router", "React", "Resend API"],
   },
   {
     id: "turing-machine-simulator",
@@ -656,9 +598,8 @@ export const projects: Project[] = [
     highlights: [
       "Users can search for and select any image from Unsplash to use as a background, making the app more personalized and enjoyable to use",
       "Users can log in or sign up using GitHub or Google",
-      "Useful as a lightweight live-demo entry alongside longer-form project writeups",
     ],
-    stack: ["Vercel deployment", "MongoDB storage", "Course project", "REACT", "User Authentication", "Mantine UI", "Unsplash API"],
+    stack: ["Vercel deployment", "MongoDB storage", "Course project", "React", "User Authentication", "Mantine UI", "Unsplash API"],
     links: [
       {
         label: "Visit site",
@@ -675,3 +616,5 @@ export const projects: Project[] = [
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug && project.subpage);
 }
+
+

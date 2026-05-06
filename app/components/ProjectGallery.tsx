@@ -1,7 +1,8 @@
 "use client";
 
+import { CiCircleInfo } from "react-icons/ci";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import type { Project } from "@/app/resume-data";
 
@@ -9,10 +10,84 @@ type ProjectGalleryProps = {
   projects: Project[];
 };
 
+const DESKTOP_PROJECT_RAIL_BASE_HEIGHT = (212 * 3) + (14 * 2);
+const PROJECT_LIST_META_ALLOWANCE = 40;
+
+function getProjectPreviewTags(stack: string[]) {
+  if (stack.length <= 2) {
+    return {
+      hiddenCount: 0,
+      items: stack,
+    };
+  }
+
+  const twoItemPreview = stack.slice(0, 2);
+  const twoItemHiddenCount = stack.length - twoItemPreview.length;
+  const moreLabelLength = `+${twoItemHiddenCount} more`.length;
+  const totalPreviewLength =
+    twoItemPreview.reduce((total, item) => total + item.length, 0) + moreLabelLength;
+  const hasLongChip = twoItemPreview.some((item) => item.length > 14);
+
+  if (totalPreviewLength > 30 || hasLongChip) {
+    return {
+      hiddenCount: stack.length - 1,
+      items: stack.slice(0, 1),
+    };
+  }
+
+  return {
+    hiddenCount: twoItemHiddenCount,
+    items: twoItemPreview,
+  };
+}
+
 export function ProjectGallery({ projects }: ProjectGalleryProps) {
   const [activeProjectId, setActiveProjectId] = useState("");
+  const [scrollShellMaxHeight, setScrollShellMaxHeight] = useState<number | null>(
+    DESKTOP_PROJECT_RAIL_BASE_HEIGHT,
+  );
+  const detailRef = useRef<HTMLElement | null>(null);
 
   const activeProject = projects.find((project) => project.id === activeProjectId);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 1080px)");
+
+    const updateScrollShellHeight = () => {
+      if (mediaQuery.matches) {
+        setScrollShellMaxHeight(null);
+        return;
+      }
+
+      const detailHeight = detailRef.current?.offsetHeight ?? 0;
+      setScrollShellMaxHeight(
+        Math.max(DESKTOP_PROJECT_RAIL_BASE_HEIGHT, detailHeight - PROJECT_LIST_META_ALLOWANCE),
+      );
+    };
+
+    updateScrollShellHeight();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateScrollShellHeight();
+    });
+
+    if (detailRef.current) {
+      resizeObserver.observe(detailRef.current);
+    }
+
+    window.addEventListener("resize", updateScrollShellHeight);
+    mediaQuery.addEventListener("change", updateScrollShellHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateScrollShellHeight);
+      mediaQuery.removeEventListener("change", updateScrollShellHeight);
+    };
+  }, [activeProjectId]);
 
   if (!projects.length) {
     return null;
@@ -26,12 +101,16 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <p className="project-list-hint">Scroll to browse</p>
         </div>
 
-        <div className="project-scroll-shell">
+        <div
+          className="project-scroll-shell"
+          style={scrollShellMaxHeight ? { maxHeight: `${scrollShellMaxHeight}px` } : undefined}
+        >
           <div aria-label="Selected projects" className="project-grid" role="list">
             {projects.map((project) => {
               const isActive = project.id === activeProject?.id;
-              const previewStack = project.stack.slice(0, 2);
-              const hiddenStackCount = Math.max(0, project.stack.length - previewStack.length);
+              const { items: previewStack, hiddenCount: hiddenStackCount } = getProjectPreviewTags(
+                project.stack,
+              );
               const previewSummary =
                 project.summary.length > 94
                   ? `${project.summary.slice(0, 91).trimEnd()}...`
@@ -67,7 +146,12 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       </div>
 
       {activeProject ? (
-        <article className="project-detail" data-tone={activeProject.tone} key={activeProject.id}>
+        <article
+          className="project-detail"
+          data-tone={activeProject.tone}
+          key={activeProject.id}
+          ref={detailRef}
+        >
           <div className="project-detail-topline">
             <p className="eyebrow">Selected project</p>
             <p>{activeProject.tag}</p>
@@ -118,12 +202,9 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
 
             {activeProject.subpage && activeProject.slug ? (
               <div className="project-detail-actions">
-                <div className="project-detail-section project-detail-section-subpage">
-                  <p className="project-detail-label">On this site</p>
-                </div>
                 <Link className="project-subpage-link" href={`/projects/${activeProject.slug}`}>
                   <span className="project-action-icon" aria-hidden="true">
-                    []
+                    <CiCircleInfo />
                   </span>
                   <span>Open full project walkthrough here</span>
                 </Link>
@@ -132,7 +213,11 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           </div>
         </article>
       ) : (
-        <article className="project-detail project-detail-empty" key="project-detail-empty">
+        <article
+          className="project-detail project-detail-empty"
+          key="project-detail-empty"
+          ref={detailRef}
+        >
           <div className="project-detail-empty-copy">
             <p className="eyebrow">Selected project</p>
             <h3 className="project-detail-empty-message">

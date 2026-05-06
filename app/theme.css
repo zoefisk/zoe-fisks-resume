@@ -257,7 +257,7 @@ html[data-theme="light"] .project-scroll-shell::-webkit-scrollbar-thumb {
 
 html[data-theme="light"] .stack-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(236, 243, 251, 0.96)),
+    linear-gradient(180deg, rgba(251, 254, 255, 0.99), rgba(228, 237, 247, 0.97)),
     linear-gradient(135deg, rgba(0, 142, 191, 0.11), transparent 68%);
   border-color: rgba(0, 128, 179, 0.2);
 }
@@ -269,25 +269,25 @@ html[data-theme="light"] .stack-card::before {
 
 html[data-theme="light"] .stack-card[data-accent="accent"] {
   background:
-    linear-gradient(180deg, rgba(255, 247, 253, 0.99), rgba(248, 240, 252, 0.96)),
+    linear-gradient(180deg, rgba(253, 244, 250, 0.99), rgba(241, 231, 245, 0.97)),
     linear-gradient(135deg, rgba(255, 68, 187, 0.16), transparent 60%);
 }
 
 html[data-theme="light"] .stack-card[data-accent="teal"] {
   background:
-    linear-gradient(180deg, rgba(244, 255, 251, 0.99), rgba(236, 250, 247, 0.96)),
+    linear-gradient(180deg, rgba(241, 252, 248, 0.99), rgba(230, 245, 241, 0.97)),
     linear-gradient(135deg, rgba(0, 199, 157, 0.16), transparent 60%);
 }
 
 html[data-theme="light"] .stack-card[data-accent="ink"] {
   background:
-    linear-gradient(180deg, rgba(245, 247, 255, 0.99), rgba(238, 243, 255, 0.96)),
+    linear-gradient(180deg, rgba(242, 245, 254, 0.99), rgba(232, 238, 250, 0.97)),
     linear-gradient(135deg, rgba(92, 115, 255, 0.16), transparent 60%);
 }
 
 html[data-theme="light"] .stack-card[data-accent="sun"] {
   background:
-    linear-gradient(180deg, rgba(255, 251, 240, 0.99), rgba(252, 246, 230, 0.96)),
+    linear-gradient(180deg, rgba(253, 249, 238, 0.99), rgba(247, 240, 222, 0.97)),
     linear-gradient(135deg, rgba(255, 188, 69, 0.18), transparent 60%);
 }
 
@@ -350,19 +350,19 @@ html[data-theme="light"] .project-card[data-active="true"] {
 
 html[data-theme="light"] .project-card[data-tone="ember"] {
   background:
-    linear-gradient(180deg, rgba(255, 241, 250, 0.99), rgba(244, 233, 244, 0.97)),
+    linear-gradient(180deg, rgba(252, 239, 248, 0.99), rgba(237, 226, 238, 0.98)),
     linear-gradient(135deg, rgba(255, 68, 187, 0.24), transparent 60%);
 }
 
 html[data-theme="light"] .project-card[data-tone="teal"] {
   background:
-    linear-gradient(180deg, rgba(236, 254, 249, 0.99), rgba(228, 244, 240, 0.97)),
+    linear-gradient(180deg, rgba(233, 249, 245, 0.99), rgba(221, 237, 233, 0.98)),
     linear-gradient(135deg, rgba(0, 199, 157, 0.24), transparent 60%);
 }
 
 html[data-theme="light"] .project-card[data-tone="ink"] {
   background:
-    linear-gradient(180deg, rgba(239, 245, 255, 0.99), rgba(229, 236, 248, 0.97)),
+    linear-gradient(180deg, rgba(236, 242, 252, 0.99), rgba(223, 231, 243, 0.98)),
     linear-gradient(135deg, rgba(92, 115, 255, 0.24), transparent 60%);
 }
 
