@@ -133,9 +133,16 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
         </article>
       ) : (
         <article className="project-detail project-detail-empty" key="project-detail-empty">
-          <p className="project-detail-empty-message">
-            Click a project to see its details expanded here!
-          </p>
+          <div className="project-detail-empty-copy">
+            <p className="eyebrow">Selected project</p>
+            <h3 className="project-detail-empty-message">
+              Click a project to see its details expanded here!
+            </h3>
+            <p className="project-detail-empty-subtitle">
+              Choose any card from the left to load the full story, tools, links, and optional
+              subpage.
+            </p>
+          </div>
         </article>
       )}
     </div>
