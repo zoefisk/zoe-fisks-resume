@@ -1499,7 +1499,7 @@ button {
 }
 
 .project-detail-empty-message {
-  font-size: clamp(2rem, 3.4vw, 3.45rem) !important;
+  font-size: clamp(1.75rem, 3vw, 3rem) !important;
   letter-spacing: -0.06em !important;
   line-height: 0.94 !important;
   margin: 0;
