@@ -65,7 +65,7 @@ export default function Home() {
             <Image
               alt="Zoë Fisk"
               className="hero-photo"
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/headshot.jpg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/headshot2.jpeg`}
               width={320}
               height={320}
             />
